@@ -22,25 +22,6 @@ For example:
 
  [ " if " , [ " and " , [ " p1 " ] , [ " not " , [ " p2 " ]] ] , [ " p3 " ]
 
-Write a python function format prop that allows to print a proposition in Propositional Logic using the
-indicated list representation. Consider the connectives: ∨, ∧, =⇒ , ⇐⇒ , ¬. and ⊕ (XOR). In the code,
-they will be written, respectively, as: or, and, if, iff, not, xor.
-
-You may safely assume that we consider only the unary operator as not and binary operations: functions
-that take only two inputs.
-
-For example, such list will be a valid input:
-
- [ " or " , [ " p1 " ] , [ " p2 " ]]
-
-List with more variables is an invalid input:
-
- [ " or " , [ " p1 " ] , [ " p2 " ] , [ " p3 " ]]
- 
-Your python function format prop should take one argument prop, which may be a (possibly nested)
-list of lists (of strings), as above. It should return a formatted string corresponding to the desired compound
-proposition. Assume all inputs are valid.
-
 
 For example, inputs from our sample example
  
@@ -58,18 +39,16 @@ produce the following strings:
 
 (p1 <-> (p2 or (not p3)))
 
-You may assume that atomic propositions are in the format of p[1-9], meaning that they have a prefix p
-and one digit from 1 to 9, or a string true or false. The list of valid operators is
+The list of valid operators is
  [ " or " , " and " , " if " , " iff " , " not " , " xor " ]
-You may wrap all strings in parentheses even if they are not required.
 
 Part B: Evaluate Prop
 Given a proposition p over atomic propositions p1, p2, · · · , pn, n ≤ 9, and a truth value assigned to each
-atomic proposition, evaluate whether p is true or false under this assignment. The proposition will be given
-to you in the same form as Part A.
+atomic proposition, evaluate whether p is true or false under this assignment. 
 
 Assume that the values of atomic propositions are given as a Python list of length n where
 each element is 0 or 1. For example if we have p1 = 0, p2 = 1, p3 = 0 the corresponding list is:
+
  values = [0 , 1 , 0]
  
 Your python function eval prop should take 2 arguments prop, a proposition in the list representation,
